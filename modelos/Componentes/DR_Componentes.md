@@ -1,4 +1,7 @@
-##Diagrama
+## Diagrama de Componentes
+
+
+![componentes revisai](https://github.com/user-attachments/assets/766ecca7-4abd-4014-9642-bec2563021df)
 
 ```puml
 @startuml
