@@ -1,7 +1,7 @@
 ## Diagrama de Arquitetura
 
 
-\``
+``` puml
 @startuml
 skinparam componentStyle rectangle
 top to bottom direction
