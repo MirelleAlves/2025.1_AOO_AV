@@ -13,6 +13,8 @@ Este diagrama apresenta uma visão integrada das principais classes do sistema, 
 
 As relações entre as classes são cuidadosamente definidas para representar a posse e associações necessárias, como a ligação entre usuário e veículos, veículos e suas manutenções, alertas, despesas, histórico e checklists, bem como o compartilhamento entre usuários.
 
+<img width="2221" height="930" alt="DR classes" src="https://github.com/user-attachments/assets/d0eccef9-2fe5-4ccd-bb50-35811d28d65b" />
+
 
 ```puml
 @startuml
