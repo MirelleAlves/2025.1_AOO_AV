@@ -1,4 +1,4 @@
-# Diagrama de Casos de Uso - Visão Geral do Sistema REVISAÍ
+# Diagrama de Casos de Uso - Sistema REVISAÍ
 
 Este diagrama apresenta a visão geral dos casos de uso do sistema REVISAÍ, mostrando os atores principais, os casos de uso e as interações entre eles.
 
