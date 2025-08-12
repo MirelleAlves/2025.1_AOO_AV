@@ -1,4 +1,10 @@
-## Cadastro de Motoristas Autorizados
+## Diagrama de Atividade: Cadastro de Motoristas Autorizados
+
+- Permite ao usuário logado associar motoristas previamente cadastrados ao seu veículo.  
+- Exibe lista de motoristas disponíveis para seleção.  
+- Valida se o motorista selecionado já está vinculado ao veículo, prevenindo duplicidades.  
+- Em caso de motorista já autorizado, exibe mensagem de erro e encerra o processo.  
+- Se validado, associa o(s) motorista(s) ao veículo e confirma a operação com sucesso.
 
 
 ```puml
