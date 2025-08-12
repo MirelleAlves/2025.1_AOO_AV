@@ -5,8 +5,6 @@
 - Sugestões automáticas com base no histórico de manutenções.  
 - Cálculo dinâmico de alertas.
 
-
-
 ```puml
 @startuml
 start
@@ -28,4 +26,4 @@ endif
 
 stop
 @enduml
-```
+``
