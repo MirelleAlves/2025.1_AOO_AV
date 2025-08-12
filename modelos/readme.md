@@ -71,7 +71,6 @@ rectangle "Sistema REVISAÍ" {
 
 | Nome                               | Descrição breve             | Observações |
 | ---------------------------------- | --------------------------- | ----------- |
-| [Realizar Login](./atividade/UC_login.md) | Permite o acesso ao sistema | -           |
 | [Cadastrar Usuário](./atividade/UC_Cadastro_Usuário.md) | Permite o cadastro de usuário | -           |
 | [Cadastrar Veiculo](./atividade/UC_Cadastro_Veículo.md) | Permite o cadastro de veiculo | -           |
 | [Compartilhar Veículos](./atividade/UC_Compartilhar_Veículo.md) | Permite o compartilhamento de veiculo | -           |
@@ -86,15 +85,8 @@ rectangle "Sistema REVISAÍ" {
 
 | Nome                                     | Descrição breve                                               | Observações |
 |------------------------------------------|----------------------------------------------------------------|-------------|
-| [Usuario](./classe/CL_Usuario.md)               | Representa o usuário da aplicação, com permissões e métodos de conta. | -           |
-| [Veiculo](./classe/CL_Veiculo.md)               | Representa um veículo cadastrado pelo usuário.                 | -           |
-| [Manutencao](./classe/CL_Manutencao.md)        | Armazena informações de serviços realizados no veículo.       | -           |
-| [Alerta](./classe/CL_Alerta.md)                 | Permite a criação de alertas de manutenção por tempo ou quilometragem. | -           |
-| [Despesa](./classe/CL_Despesa.md)               | Registra despesas gerais associadas ao veículo.               | -           |
-| [Historico](./classe/CL_Historico.md)           | Mantém um log de ações realizadas sobre o veículo.            | -           |
-| [Compartilhamento](./classe/CL_Compartilhamento.md) | Gerencia o compartilhamento de veículos com outros usuários.   | -           |
-| [ChecklistViagem](./classe/CL_Checklist.md)     | Permite criar listas personalizadas para preparo de viagens.   | -           |
-| [Relacionamentos](./classe/CL_Relacionamentos.md) | Define as associações entre usuários, veículos e outras entidades do sistema. | -           |
+| [Diagrama de Classes](./classe/Diagrama_Classes.md)               | contem todo o diagrama das classes apresentadas no projeto. | -           |
+
 
 
 # 🔹 Diagrama de Estados
