@@ -4,59 +4,67 @@
 
 # 🔹Diagrama de caso de uso
 
-[Imagem do diagrama e o descritivo](./casoDeUso/diagramaUsoImagem.md) 
+[Imagem do diagrama e o descritivo](./casoDeUso/UC_Diagrama_VisaoGeral.md) 
 
 ```puml
 @startuml
 left to right direction
 skinparam packageStyle rectangle
-skinparam usecase {
-  BackgroundColor LightSkyBlue
-  BorderColor DarkSlateGray
-}
 
-actor Usuario
-actor Motorista
-actor Proprietario
-actor Robo
+actor "Visitante" as Visitante
+actor "Usuário" as Usuario
+actor "Proprietário" as Proprietario
+actor "Sistema" as Sistema
 
 rectangle "Sistema REVISAÍ" {
 
- rectangle "Sistema de autenticação" {
-    usecase "login" as UC1
+  usecase "Cadastrar Usuário" as UC2
+  usecase "Login" as UC1
+  usecase "Cadastrar Veículo" as UC4
+  usecase "Registrar Documentação" as UC3
+  usecase "Compartilhar Veículo" as UC5
+  usecase "Associar Motorista ao Veículo" as UC5_1
+  usecase "Registrar Manutenção" as UC6
+  usecase "Emitir Relatórios e Histórico" as UC7
+  usecase "Atualizar Quilometragem" as UC8
+  usecase "Registrar Despesas" as UC9
+  usecase "Fazer Checklist de Viagem" as UC10
+  usecase "Gerar Alertas Inteligentes" as UC11
+
+  Visitante --> UC2
+  Visitante --> UC1
+
+  Usuario --> UC1
+  Usuario --> UC4
+  Usuario --> UC5
+  Usuario --> UC6
+  Usuario --> UC7
+  Usuario --> UC8
+  Usuario --> UC9
+  Usuario --> UC10
+
+  Proprietario --> UC5_1
+  Proprietario --> UC5
+
+  Sistema --> UC11
+
+  UC2 .> UC3 : <<include>>
+  UC4 .> UC3 : <<include>>
+
+  UC6 .> UC4 : <<include>> : "Selecionar veículo"
+  UC7 .> UC4 : <<include>> : "Selecionar veículo"
+  UC8 .> UC4 : <<include>> : "Selecionar veículo"
+  UC9 .> UC4 : <<include>> : "Selecionar veículo"
+  UC10 .> UC4 : <<include>> : "Selecionar veículo"
+
+  UC5_1 .> UC4 : <<include>> : "Selecionar veículo"
+
+  UC5_1 .> UC5 : <<extend>>
+
 }
-  
-    usecase "Cadastrar Usuário" as UC2
-    usecase "Registrar Documentação" as UC3
-    usecase "Cadastrar Veículos" as UC4
-    usecase "Compartilhar Veículos" as UC5
-    usecase "Registrar Manutenções" as UC6
-    usecase "Emitir Históricos e Relatórios" as UC7
-    usecase "Atualizar Quilometragem" as UC8
-    usecase "Registrar Despesas Gerais" as UC9
-    usecase "Fazer Checklist de Viagem" as UC10
-  
-  usecase "Alertar" as UC11
-}
-
-Usuario --> UC1
-Usuario --> UC2
-Usuario --> UC4
-Usuario --> UC6
-Usuario --> UC7
-Usuario --> UC8
-Usuario --> UC9
-Usuario --> UC10
-Proprietario --> UC5
-
-Motorista --|> Usuario
-Proprietario --|> Usuario
-Robo --> UC11
-
-UC2 ..> UC3 : <<include>>
-UC4 ..> UC3 : <<include>>
 
 @enduml
+``
 ```
 
 # 🔹Diagrama de Atividade
