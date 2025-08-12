@@ -4,8 +4,7 @@
 - Campos obrigatórios: marca, modelo, ano, combustível, quilometragem atual, placa.  
 - Validação de placa (formatos Mercosul e antigo).  
 - Prevenção de placas duplicadas.  
-- Indicação de proprietário e motoristas autorizados.  
-- Edição e exclusão com controle de permissões.  
+
 
 
 
@@ -13,7 +12,8 @@
 @startuml
 start
 
-:Usuário acessa a tela de "Cadastro de Veículo";
+:Usuário (proprietário) acessa a tela de "Cadastro de Veículo";
+:Sistema identifica o usuário logado;
 
 :Sistema exibe campos obrigatórios:
 - Marca
@@ -32,21 +32,14 @@ if (Placa válida?) then (Sim)
 
   if (Placa já cadastrada?) then (Sim)
     :Sistema exibe mensagem de erro: "Placa duplicada";
-    stop
+    :Usuário corrige os dados e reenviá-los;
+    -> :Usuário preenche os dados e envia o formulário;
   else (Não)
     :Sistema cadastra o veículo;
-    :Sistema associa o proprietário ao veículo;
+    :Sistema associa o usuário logado como proprietário ao veículo;
 
-    :Usuário escolhe adicionar motoristas autorizados?;
-
-    if (Sim)
-      :Usuário seleciona motoristas autorizados;
-      :Sistema associa motoristas autorizados ao veículo;
-    else (Não)
-      note right
-      Apenas o proprietário terá acesso inicialmente.
-      end note
-    endif
+    :Usuário envia documentação do veículo;
+    :Sistema valida e armazena a documentação;
 
     :Sistema confirma cadastro com sucesso;
     stop
@@ -54,8 +47,10 @@ if (Placa válida?) then (Sim)
 
 else (Não)
   :Sistema exibe mensagem de erro: "Formato de placa inválido";
-  stop
+  :Usuário corrige os dados e reenviá-los;
+  -> :Usuário preenche os dados e envia o formulário;
 endif
 
 @enduml
+
 ```
