@@ -1,5 +1,6 @@
 ## Diagrama de Arquitetura
 
+![Imagem do WhatsApp de 2025-08-08 à(s) 20 03 47_ad0d24ab](https://github.com/user-attachments/assets/67b2eadd-ef99-4b1b-a93e-e6d38b8ce37f)
 
 ``` puml
 @startuml
