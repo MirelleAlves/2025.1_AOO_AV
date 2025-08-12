@@ -1,13 +1,9 @@
-
-
-
 ## 1 Identificação
 - **Nome**: Login  
 - **Ator Primário**: Usuário  
 - **Descrição**: Permite que um usuário acesse o sistema mediante a inserção e validação de suas credenciais (usuário e senha).
 
 ---
-
 
 ## 1.1. Visão Geral
 
@@ -42,6 +38,7 @@ UC2 --> UC7 : [primeiro acesso]
 UC2 --> UC3 : [credenciais inválidas]
 UC2 --> UC4 : [5 tentativas inválidas]
 @enduml
+
 ```
 
 ## 1.2. Fluxo Principal de Eventos
@@ -59,12 +56,12 @@ UC2 --> UC4 : [5 tentativas inválidas]
 
 ## 1.3. Fluxos Alternativos
 
-### 1.4.1. a. Credenciais Inválidas
+### 1.3.1. a. Credenciais Inválidas
 1. O sistema detecta que as credenciais são inválidas.
 2. O sistema exibe uma mensagem de erro: `"Usuário ou senha incorretos."`
 3. O fluxo retorna para a etapa 2 do fluxo principal.
 
-### 1.4.2. b. Primeiro Acesso
+### 1.3.2. b. Primeiro Acesso
 1. O sistema identifica que é o primeiro acesso do usuário.
 2. O sistema solicita a troca da senha temporária por uma nova.
 3. Após a troca, o usuário é redirecionado conforme seu perfil.
@@ -120,49 +117,4 @@ UC2 --> UC4 : [5 tentativas inválidas]
 | **Administrador** | Usuário com permissões avançadas de gerenciamento.        | Painel administrativo |
 | **Usuário comum** | Usuário com acesso limitado às suas próprias informações. | Painel do usuário     |
 | **Inativo**       | Usuário desativado ou bloqueado pelo administrador.       | Acesso negado         |
-
----
-
-# 2. Diagrama de Atividades
-
-## 2.1. Cadastrar Usuário
-```puml
-@startuml
-title Diagrama de Atividade - Cadastro de Usuário (Revisaí)
-start
-:Iniciar aplicativo;
-:Selecionar "Criar Conta";
-:Ir para atividade "Registro de Documentação";
-if (Documentação registrada com sucesso?) then (Sim)
- :Aplicar hash na senha;
- :Salvar dados no banco de dados;
- :Exibir mensagem de sucesso;
- :Redirecionar para tela inicial ou login automático;
-else (Não)
- :Exibir mensagem de erro ao usuário;
-endif
-stop
-@enduml
-```
-## 2.2. Cadastrar Veículo
-```puml
-@startuml
-title Diagrama de Atividade - Cadastro de Veículo (Revisaí)
-start
-:Acessar área de veículos;
-:Selecionar "Adicionar Veículo";
-:Ir para atividade "Registro de Documentação";
-if (Documentação registrada com sucesso?) then (Sim)
- :Indicar proprietário;
- :Adicionar motoristas autorizados (opcional);
- :Salvar veículo no sistema;
- :Exibir mensagem de sucesso;
-else (Não)
- :Exibir erro: "Erro no registro de documentação";
-endif
-stop
-@enduml
-```
-
-
 
