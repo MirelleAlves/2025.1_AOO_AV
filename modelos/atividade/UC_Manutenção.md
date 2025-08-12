@@ -1,13 +1,13 @@
 ## Diagrama de Atividade: Manutenções do veículo
 
 - Registro de tipo de serviço, data, quilometragem, oficina, valor e observações.  
-- Upload de nota fiscal com leitura automática (OCR).  
-- Edição e exclusão com rastreamento do autor. 
-
+- Opção de upload de nota fiscal durante o registro.  
+- Armazenamento dos dados e arquivo da nota fiscal, se enviado.  
+- Registro do usuário logado responsável pelo cadastro.
 
 
 ```puml
- @startuml
+@startuml
 start
 
 :Usuário acessa "Registrar Manutenção";
@@ -22,16 +22,17 @@ start
 
 :Usuário preenche dados;
 
-:Usuário faz upload da nota fiscal;
+:Usuário faz upload da nota fiscal?;
 
-:Sistema processa nota com OCR (leitura automática);
+if (Nota fiscal enviada?) then (Sim)
+  :Sistema armazena dados e arquivo da nota;
+else (Não)
+  :Sistema armazena dados sem nota fiscal;
+endif
 
-:Sistema armazena os dados e arquivo da nota;
-
-:Usuário pode editar ou excluir registro;
-
-:Sistema rastreia e armazena autor das alterações;
+:Sistema registra usuário logado responsável;
 
 stop
 @enduml
+
 ```
